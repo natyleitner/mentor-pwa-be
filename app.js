@@ -4,6 +4,8 @@ const mongo = require("mongoose");
 const app = express();
 const bodyParser = require("body-parser");
 const { buildSchema } = require("graphql"); // import the function to build our schema
+const cors = require("cors");
+
 const Mentor = require("./models/mentor");
 
 const url = "mongodb://127.0.0.1:27017/mentor-pwa";
@@ -19,6 +21,11 @@ app.use(bodyParser.json()); // use body-parser middleware to parse incoming json
 //   console.log("Server running successfully...");
 // });
 
+const corsOptions = {
+  origin: "http://localhost:3000",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 app.use(
   "/graphql",
   graphqlHTTP({
