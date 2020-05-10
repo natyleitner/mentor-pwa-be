@@ -1,0 +1,17 @@
+{
+  "name": "mentor-pwa-be",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:natyleitner/mentor-pwa-be.git",
+  "author": "Naty Leitner",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0",
+    "mongoose": "^5.9.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
