@@ -50,7 +50,7 @@ app.use(
     }
 
     type mentorMutation {
-        createMentor(mentorAttributes: MentorAttributes): Mentor
+        createMentor(attributes: MentorAttributes): Mentor
     }
 
     schema {
@@ -71,11 +71,11 @@ app.use(
       },
       createMentor: (args) => {
         const mentor = new Mentor({
-          name: args.mentorAttributes.name,
-          title: args.mentorAttributes.title,
-          email: args.mentorAttributes.email,
-          description: args.mentorAttributes.description,
-          keywords: args.mentorAttributes.keywords,
+          name: args.attributes.name,
+          title: args.attributes.title,
+          email: args.attributes.email,
+          description: args.attributes.description,
+          keywords: args.attributes.keywords,
         });
 
         return mentor
